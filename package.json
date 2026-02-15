@@ -1,0 +1,32 @@
+{
+  "name": "@vektor-ui/icons",
+  "version": "0.1.0",
+  "description": "React icon library for the Vektor UI design system",
+  "type": "module",
+  "sideEffects": false,
+  "keywords": [],
+  "author": "invikta-lab",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "peerDependencies": {
+    "react": "^19.2.4"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  }
+}

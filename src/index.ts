@@ -1,0 +1,1 @@
+export { RocketIcon, type IconProps } from './icons/rocket-icon'
