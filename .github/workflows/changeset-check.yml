@@ -1,0 +1,19 @@
+name: Changeset Check
+
+on:
+  pull_request:
+
+jobs:
+  changeset:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Ensure changeset exists
+        run: |
+          if ls .changeset/*.md >/dev/null 2>&1; then
+            echo "✅ Changeset found"
+          else
+            echo "❌ No changeset found in .changeset/. Add one via: npx changeset"
+            exit 1
+          fi
